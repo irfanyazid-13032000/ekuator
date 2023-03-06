@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
 
@@ -27,6 +28,12 @@ Route::get('/products/{uuid}', [ProductController::class, 'show']); // get a sin
 Route::put('/products/{uuid}', [ProductController::class, 'update']); // update a product by UUID
 Route::delete('/products/{uuid}', [ProductController::class, 'destroy']); // delete a product by UUID
 
+
+
+Route::get('/payment/', [PaymentController::class, 'index']); // get all payment
+Route::post('/payment', [PaymentController::class, 'store']); // create a new payment
+Route::get('/payment/{uuid}', [PaymentController::class, 'show']); // get bunch of transactions by UUID
+Route::delete('/payment/{uuid}', [PaymentController::class, 'destroy']); // delete a payment by UUID
 
 Route::get('/transactions/{limit}/{sortBy}/{orderBy}', [TransactionController::class, 'index']); // get all transactions
 Route::post('/transactions', [TransactionController::class, 'store']); // create a new transactions

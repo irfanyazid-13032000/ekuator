@@ -46,7 +46,7 @@ class TransactionController extends Controller
 
         try {
             Transaction::create([
-                "uuid_transaction" => Str::uuid(),
+                "uuid_transaction" => $request->uuid,
                 "products_id" => $request->products_id,
                 "quantity" => $request->quantity,
                 "price" => $request->price,

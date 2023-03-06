@@ -9,5 +9,5 @@ class Payment extends Model
 {
     use HasFactory;
 
-    protected $fillable =["uuid_transaction","name","tgl_transaksi"];
+    protected $guarded =["id"];
 }
